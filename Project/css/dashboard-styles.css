@@ -1,11 +1,12 @@
 /* Main */
 body{
     background-color: rgb(229,229,229);
+    background-image: url("../images/logo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top right;
 }
 
-h1{
-    border-bottom: 2px solid #282828;
-}
 
 main{
     clear: both;
