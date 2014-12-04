@@ -30,7 +30,7 @@ $(function(){
 
 	console.log("listhead: ", h3Right.hasClass('listhead')); //Logs if h3Right has a class of listhead
 
-	console.log(rightNavUL); //Logs the value of the rightNavUL prior to any changes 
+	console.log(rightNavUL); //Logs the value of the rightNavUL prior to any changes
 
 	rightNavUL  //changes the link of the third list item of the rightNavUL
 		.find('li')
