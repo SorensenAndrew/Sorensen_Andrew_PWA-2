@@ -1,0 +1,24 @@
+body{
+    background-color: #FFEFD5;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+img{
+    border: 2px solid black;
+    width: 350px;
+    height: 300px;
+    margin-left: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.big{
+    font-size: 50px;
+}

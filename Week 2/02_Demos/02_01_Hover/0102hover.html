@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hover Demo</title>
+<style>
+	ul {
+		margin-left: 20px;
+		color: blue;
+	}
+	li {
+	  cursor: default;
+	}
+	li.active {
+	  background: orange;
+	  color: white;
+	}
+	
+</style>
+
+</head>
+<body>
+<ul>
+  <li>Even</li>
+  <li>Odd</li>
+  <li>Even 2</li>
+  <li>Odd 2</li>
+  <li>Even 3</li>
+  <li>Odd 3</li>
+</ul>
+  
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+
+//1.Target the li, then filter all odd li to hide. 2.Next Filter all li odd list items to show when you hover over the even li's.
+  /* $("li:odd").css("display", "none");
+    $("li:even").hover(
+            function(){
+                $(this).next().css("display", "block");
+            }
+    )
+*/
+    $("li")
+            .filter(":odd")
+            .hide()
+            .end()
+            .filter(":even")
+            .hover(function(){
+                $(this)
+                        .toggleClass("active")
+                        .next()
+                        .stop(true, true)
+                            .slideToggle();
+            });
+
+</script>
+</body>
+</html>
