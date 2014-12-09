@@ -8,16 +8,16 @@
 <body>
 <h1>Become a Vermillion Test Subject!</h1>
 <label for="firstname">First Name:</label>
-<input id="firstname">
+<input class="masterToolTip" title="First Name" id="firstname">
 <br>
 <label for="lastname">Last Name:</label>
-<input id="lastname">
+<input class="masterToolTip" title="Last Name" id="lastname">
 <br>
 <label for="email">Email Address:</label>
-<input id="email">
+<input class="masterToolTip" title="Email" id="email">
 <br>
 <label for="city">City:</label>
-<input id="city">
+<input class="masterToolTip" title="City" id="city">
 <br>
 <label for="state">State:</label>
 <select id="state">
@@ -75,14 +75,23 @@
 </select>
 <br>
 <label for="password">Password:</label>
-<input id="password">
+<input class="masterToolTip" title="Password" id="password">
 <br>
 <label for="compassword"> Confirm Password:</label>
-<input id="compassword">
+<input class="masterToolTip" title="Confirm Password" id="compassword">
 <br>
 <input type="radio"> I agree to all terms and conditions of becoming a Vermillion test subject
 <br>
-<button><a href="dashboard.html">Submit</a></button>
+<button class="btn"><a href="dashboard.html">Submit</a></button>
+
+<!-- jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery-1.11.1.js"></script>
+<!-- plugins -->
+
+
+<!-- main -->
+<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>

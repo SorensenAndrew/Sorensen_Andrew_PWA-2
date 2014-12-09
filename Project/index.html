@@ -1,25 +1,67 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Vermillion Enterprises</title>
+<!doctype html>
+
+<!--
+	This is the main index of the application
+	
+	All your script tags should be at the bottom of this file
+	
+	The only html element in the body is the container div
+	Your code should load your page templates into the container
+-->
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Your Title Here</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- end CSS-->
+
 </head>
-<link rel="stylesheet" href="css/styles.css">
+
 <body>
 <header>
-    <h1>Welcome to Vermillion Enterprises!</h1>
-    <label for="username">Username:</label>
-    <input id="username">
-    <br>
-    <label for="password">Password:</label>
-    <input id="password">
-    <br>
-    <button><a href="dashboard.html">Sign In</a></button>
+    <div class="nav">
+        <ul>
+            <li class="home"><a class="active" href="index.html">Home</a></li>
+            <li class="tutorials"><a href="dashboard.html">Dashboard</a></li>
+            <li class="about"><a href="projects.html">Projects</a></li>
+        </ul>
+    </div>
+</header>
+<h1>Welcome to Vermillion Enterprises!</h1>
+<label for="username">Username:</label>
+<input class="masterToolTip" title="Username" id="username">
+<br>
+<label for="password">Password:</label>
+<input class="masterToolTip" title="Password" id="password">
+<br>
+<button class="btn"><a href="dashboard.html">Sign In</a></button>
 </header>
 <main>
     <h2>Sign Up to be a Vermillion Test Subject!</h2>
     <p>Click below to see if you qualify for the exciting opportunity of becoming a test subject for one of Vermillion's new products.</p>
-    <button><a href="signup.html">Sign Up!</a></button>
-</main>
+    <button class="btn"><a href="signup.html">Sign Up!</a></button>
+
+
+
+    <!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.js"></script>
+    <!-- plugins -->
+
+
+    <!-- main -->
+    <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 </html>

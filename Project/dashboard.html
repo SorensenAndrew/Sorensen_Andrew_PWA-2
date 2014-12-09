@@ -7,12 +7,40 @@
 <link rel="stylesheet" href="css/dashboard-styles.css">
 <body>
 <header>
-    <p>Welcome:</p>
-    <button><a href="index.html">Sign Out</a></button>
+    <div class="nav">
+        <ul>
+            <li class="home"><a href="index.html">Home</a></li>
+            <li class="tutorials"><a class="active" href="dashboard.html">Dashboard</a></li>
+            <li class="about"><a href="projects.html">Projects</a></li>
+            <li><button id="signout" class="btn"><a href="index.html">Sign Out</a></button></li>
+        </ul>
+
+    </div>
+
 </header>
-<main>
+
     <h1>Welcome Test Subject!</h1>
-    <p>Sign up for a new test or monitor the tests you are currently in.</p>
-</main>
+    <div>
+        <ul id="tabs-nav">
+            <li class="btn"><a href="#projects">Projects</a></li>
+            <li class="btn"><a href="#tasks">Science!</a></li>
+            <li class="btn"><a href="#users">Users</a></li>
+        </ul>
+
+        <div id="tabs">
+            <P id="projects">Go to your tests section and manage the tests you are enrolled in, have completed, or are planning to start.<button class="projectsbtn btn"><a href="projects.html">Tests</a><br></button></P>
+            <P id="tasks">See some products that have been succesfully created by Vermillion scientists, with help from subjects like you.<br><button class="tasksbtn btn">Science!</button></P>
+            <P id="users">Manage your profile's information.<br><button class="usersbtn btn">Account Info</button></P>
+        </div>
+    </div>
+
+<!-- jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery-1.11.1.js"></script>
+<!-- plugins -->
+
+
+<!-- main -->
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -1,13 +1,3 @@
-/* Main */
-body{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(229,229,229);
-    background-image: url("../images/logo.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top right;
-}
 
 /* Nav */
 
@@ -53,6 +43,86 @@ body{
 
 }
 
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(229,229,229);
+    background-image: url("../images/logo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top right;
+}
+/* Modal */
+#overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+#modal{
+    width: 350px;
+    background: #E5E5E5;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    z-index: 1001;
+    display: none;
+}
+
+#modal .header{
+    background: #282828;
+    color: #fff;
+    padding: 10px;
+}
+
+#modal p{
+    margin: 15px;
+}
+
+#modal .close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #282828;
+    cursor: pointer;
+    background-color: #D12633 ;
+}
+
+form{
+    padding: 10px;
+}
+
+form.input{
+    padding: 10px;
+}
+
+.mystatus > input[type=radio]{
+    display: none;
+}
+
+input[type=radio] + img{
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+input[type=radio]:checked + img{
+    border: 2px solid #f00;
+}
+
 /* Buttons */
 .btn {
     background: #282828;
@@ -81,25 +151,15 @@ body{
     text-decoration: none;
 }
 
-/* Accordian */
+/* Tool Tip */
 
-#tabs{
-    background-color: #999;
-    width: 600px;
-    height: 150px;
-    padding: 20px;
-}
-
-#tabs-nav{
-    width: 600px;
-    height: 75px;
-    padding: 20px;
-    background-color: #999;
-    text-decoration: none;
-    list-style-type: none;
-}
-
-#tabs-nav li{
-    display: inline;
-
+.toolTip{
+    display:none;
+    position:absolute;
+    border:1px solid #333;
+    background-color: #282828;
+    border-radius: 5px;
+    padding:10px;
+    color:#D12633;
+    font: 12px Arial;
 }

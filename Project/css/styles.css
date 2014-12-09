@@ -1,6 +1,8 @@
 /* Main */
 body{
-    background-color: rgb(229,229,229);
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5E5;
     background-image: url("../images/logo.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,29 +13,92 @@ h2{
     border-bottom: 2px solid #282828;
 }
 
+/* Nav */
+
+.nav ul {
+    list-style: none;
+    background-color: #282828;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #888;
+    margin-left: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+}
+
+.nav a:hover {
+    background-color: #E5E5E5;
+}
+
+.nav a.active {
+    background-color: #D12633;
+    color: #444;
+    cursor: default;
+}
+
+.nav li {
+    display: inline-block;
+    margin-right: -4px;
+}
+
+#signout{
+
+}
+
+    /* Buttons */
+.btn {
+    background: #282828;
+    background-image: -webkit-linear-gradient(top, #282828, #E5E5E5);
+    background-image: -moz-linear-gradient(top, #282828, #E5E5E5);
+    background-image: -ms-linear-gradient(top, #282828, #E5E5E5);
+    background-image: -o-linear-gradient(top, #282828, #E5E5E5);
+    background-image: linear-gradient(to bottom, #282828, #E5E5E5);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Arial;
+    color: #D12633;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #E5E5E5;
+    background-image: -webkit-linear-gradient(top, #E5E5E5, #282828);
+    background-image: -moz-linear-gradient(top, #E5E5E5, #282828);
+    background-image: -ms-linear-gradient(top, #E5E5E5, #282828);
+    background-image: -o-linear-gradient(top, #E5E5E5, #282828);
+    background-image: linear-gradient(to bottom, #E5E5E5, #282828);
+    text-decoration: none;
+}
 
 /* Welcome Area */
 input{
     margin-top: 5px;
 }
 
-button{
-    color: rgb(209,38,51);
-    background-color: rgb(40,40,40);
-    margin-top: 5px;
-}
+/* Tool Tip */
 
-button:active{
-    background-color: rgb(209,38,51);
-    color: rgb(40,40,40);
-}
-
-a{
-    color: rgb(209,38,51);
-    background-color: rgb(40,40,40);
-}
-
-a:active{
-    background-color: rgb(209,38,51);
-    color: rgb(40,40,40);
+.toolTip{
+    display:none;
+    position:absolute;
+    border:1px solid #333;
+    background-color: #282828;
+    border-radius: 5px;
+    padding:10px;
+    color:#D12633;
+    font: 12px Arial;
 }
