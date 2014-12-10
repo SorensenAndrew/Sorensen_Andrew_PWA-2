@@ -23,8 +23,8 @@ $(".cat").hover(function(){
     $(this).width(400).height(350);
 });
 
-$("#title").hover(function(){
-    $(this).append("<span>'... and what they do</span>");
+$("#title").one('mouseenter', function(){
+    $(this).append("<span> ... and what they do</span>");
 });
 
 
