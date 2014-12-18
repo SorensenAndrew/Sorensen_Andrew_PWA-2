@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="updateaccountinputs">
+    <label>First Name:</label>
+        <input type="text" class="masterTooltip" title="Add or change your first name" id="updatefirstname"><br>
+    <label>Last Name:</label>
+        <input type="text" class="masterTooltip" title="Add or change your last name" id="updatelastname"><br>
+    <label>E-mail:</label>
+        <input type="email" class="masterTooltip" title="Update your email" id="updateemail"><br>
+    <input type="button" id="updateAcctBtn" value="Save Changes">
+
+</div>
+<script>
+    var updateAcct = function() {
+        console.log('Pulls user info');
+        $.ajax({
+            url: 'xhr/get_user.php',
+            type: 'get',
+            dataType: 'json',
+            success: function (response) {
+                if (response.error) {
+                    console.log(response.error);
+                } else {
+                    var updatefirstname = response.user.first_name;
+                    updatelastname = response.user.last_name;
+                    updateemail = response.user.email;
+
+                    $('#updatefirstname').val(updatefirstname);
+                    $('#updatelastname').val(updatelastname);
+                    $('#updateemail').val(updateemail);
+                };
+            }
+        });
+
+        $('#updateAcctBtn').on('click', function(e){
+            e.preventDefault();
+            var changedfirstname = $('#updatefirstname').val();
+            var changedlastname = $('#updatelastname').val();
+            var changedemail = $('#updateemail').val();
+            $.ajax({
+                url: 'xhr/update_user.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    first_name: changedfirstname,
+                    last_name: changedlastname,
+                    email: changedemail
+            },
+                success: function(response){
+                    if(response.error){
+                        console.log(response.error);
+                    }else{
+                        console.log('account updated');
+                    }
+                }
+            });
+        });
+    };
+
+    updateAcct();
+</script>
+</body>
+</html>

@@ -5,8 +5,31 @@
 
 
     $(function(){
+        /*=================================== Log In ===================================*/
+        $('#signinButton').click(function(){
+            var user = $('#username').val();
+            var pass = $('#password').val();
 
-        /* Modal */
+            $.ajax({
+                url:'xhr/login.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    username: user,
+                    password: pass
+                },
+                success: function(response) {
+                    console.log("Test User");
+                    if(response.error){
+                        alert(response.error);
+                    }else{
+                        window.location.assign('dashboard.html');
+                    };
+                }
+            });
+        });
+
+        /*=================================== Modal ===================================*/
         $('.modalClick').on('click', function (e) {  //when modalClick is clicked, run function
             e.preventDefault();                         // prevent page re-load
             $('#overlay')                               // target overlay
@@ -30,8 +53,183 @@
         $('.mystatus').mouseout(function () {           //when mystatus is moused out run function
             $(this).fadeTo(100, 1);                     //end fade
         });
+        /*=================================== Add Projects to Page===================================*/
+        var projects = function(){
 
-        /* Accordian */
+            console.log('projects');
+
+            $.ajax({
+                url: 'xhr/get_projects.php',
+                type: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    if (response.error) {
+                        console.log(response.error);
+                    } else {
+
+                        $(".projects").empty();
+
+                        for(var i= 0, j=response.projects.length; i < j;i++){
+                            var result = response.projects[i];
+
+                            $(".projects").append(
+                                    '<div style = "border:1px solid black">' +
+                                    "<input class='projectid' type='hidden' value='" + result.id + "'>" +
+                                    "Project Name: " + result.projectName + "<br>" +
+                                    "Project Description: " + result.projectDescription + "<br>" +
+                                    "Project Status: " + result.status + "<br>" +
+                                    '<button class="deletebtn">Delete</button>' +
+                                    '<button class="editbtn">Edit</button>' +
+                                    '</div> <br>'
+                            );
+                        };
+                        $('.deletebtn').on('click', function(e){
+                            var pid = $(this).parent().find(".projectid").val();
+
+                            $.ajax({
+                                url: 'xhr/delete_project.php',
+                                data: {
+                                    projectID: pid
+                                },
+                                type: 'POST',
+                                dataType: 'json',
+                                success: function(response){
+                                    console.log('test success');
+
+                                    if(response.error){
+                                        alert(response.error);
+
+                                    }else{
+                                        console.log('delete_project');
+                                        //console.log(result.id);
+//                                        window.location.assign('projects.html');
+                                        $( "#dialog" ).dialog();
+                                        projects();
+
+                                    }
+                                }
+                            });
+                        });//end delete
+                    }
+
+                }
+            })
+        };
+        projects();
+
+        /*=================================== To Profile Page Button ===================================*/
+
+        $('.projectsbtn').on('click', function(e) {
+            e.preventDefault();
+            window.location.assign("projects.html");
+        });
+        /*=================================== Add Project ===================================*/
+
+        $('#addButton').on('click', function(e) {
+            e.preventDefault();
+            var projName = $('#projectName').val(),
+                projDesc = $('#projectDescription').val(),
+                projDue = $('#projectDueDate').val(),
+                status = $('input[name = "status"]:checked').prop("id");
+                console.log(projName, projDesc, projDue);
+
+            $.ajax({
+                url: "xhr/new_project.php",
+                type: 'post',
+                dataType: "json",
+                data: {
+                    projectName: projName,
+                    projectDescription: projDesc,
+                    dueDate: projDue,
+                    status: status
+                },
+                success: function(response) {
+                    console.log('Testing for success');
+
+                    if(response.error) {
+                        alert(response.error);
+                    }else{
+                        window.location.assign("projects.html");
+                    };
+                }
+            });
+        });
+
+
+        /*=================================== Register ===================================*/
+
+/*        $('#register').on('click', function(){
+            var firstname= $('#first').val(),
+                lastname= $('#last').val(),
+                username= $('#username').val(),
+                email= $('#email').val(),
+                password= $('#password').val;
+
+            $.ajax({
+                url:'xhr/register.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    firstname: firstname,
+                    lastname: lastname,
+                    username: username,
+                    email: email,
+                    password: password
+                },
+
+                success: function(response){
+                    if (response.error){
+                        alert(response.error);
+                    }else{
+                        window.location.assign('dashboard.html')
+                    }
+                }
+            });
+        }); */
+
+
+        $('#register').on('click', function(){
+            console.log("hey");
+            var firstname = $('#first').val(),
+                lastname = $('#last').val(),
+                username = $('#username').val(),
+                email = $('#email').val(),
+                password = $('#password').val();
+            console.log(firstname + ' ' + lastname + ' ' + username + ' ' + password);
+
+            $.ajax({
+                url: 'xhr/register.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    firstname: firstname,
+                    lastname: lastname,
+                    username: username,
+                    email: email,
+                    password: password
+                },
+
+                success: function(response){
+                    if(response.error){
+                        alert(response.error);
+                    } else {
+                        window.location.assign('dashboard.html');
+                    }
+                }
+            });
+        });
+        /*=================================== Username Display ===================================*/
+
+        $.getJSON('xhr/check_login.php', function(data){
+            console.log(data);
+            $.each(data, function(key, val){
+                console.log(val.first_name);
+                $('.userid').html("Welcome User: " + val.first_name);
+            });
+        });
+
+
+        /*=================================== Accordian ===================================*/
 
         $('#tabs p').hide().eq(0).show();               // hide all tabs, show first
         $('#tabs p:not(:first)').hide();                // hide all tabs paragraphs that are not first
@@ -47,7 +245,7 @@
             $('#tabs ' + clicked).fadeIn('fast');                   // fade target tab in when clicked
         }).eq(0).addClass('current');
 
-        /* Tooltip */
+        /*=================================== Tooltip ===================================*/
 
         $('.masterToolTip').hover(function () {
 
@@ -71,13 +269,36 @@
                 $('.toolTip').css({top: mousey, left: mousex});       //select toolTip ans change css
             });
 
+        /*=================================== Date Picker ===================================*/
+
+        $('.mydatepicker').datepicker();
+
+
+        /*=================================== Sortable ===================================*/
+
+        $(function() {
+            $( "#sortable" ).sortable();
+            $( "#sortable" ).disableSelection();
+        });
+
+        /*=================================== Dialog ===================================*/
+
+        /*=================================== Log Out ===================================*/
+
+        $('#logout').click(function(e){
+            e.preventDefault;
+            $.get('xhr/logout.php', function(){
+                window.location.assign('index.html');
+            })
+        });
 
 
 
 
 
 
-    })(jQuery); // end private scope
+
+    }); // end private scope
 
 
 
