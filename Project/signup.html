@@ -2,40 +2,37 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+
     <title>Sign Up!</title>
-    <link rel="stylesheet" href="css/signup-styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href="css/signup-styles.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet'
+          type='text/css'>
 </head>
+
 <body>
-<h1>Become a Vermillion Test Subject!</h1>
-<label for="first">First Name:</label>
-<input class="masterToolTip" type="text" title="First Name" id="first">
-<br>
-<label for="last">Last Name:</label>
-<input class="masterToolTip" title="Last Name" id="last">
-<br>
-<label for="email">Email Address:</label>
-<input class="masterToolTip" type="email" title="Email" id="email">
-<br>
-<label for="username"> Username:</label>
-<input class="masterToolTip" title="Username" id="username">
-<br>
-<label for="password">Password:</label>
-<input class="masterToolTip" title="Password" id="password">
-<br>
-<input type="radio"> I agree to all terms and conditions of becoming a Vermillion test subject
-<br>
-<!-- <button class="btn" id="register"><a href="dashboard.html">Submit</a></button> -->
-<input type="button" id="register" value="signup" class="btn">
+<h1>Become a Vermillion Test Subject!</h1><label for="first">First
+    Name:</label>
 
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/jquery-1.11.1.js"></script>
-<!-- plugins -->
-
-
-<!-- main -->
-<script type="text/javascript" src="js/main.js"></script>
-
+<form>
+    <input class="masterToolTip" id="first" title="First Name" type=
+            "text"><br>
+    <label for="last">Last Name:</label> <input class="masterToolTip" id=
+        "last" title="Last Name"><br>
+    <label for="email">Email Address:</label> <input class="masterToolTip"
+                                                     id="email" title="Email" type="email"><br>
+    <label for="username">Username:</label> <input class="masterToolTip"
+                                                   id="username" title="Username"><br>
+    <label for="password">Password:</label> <input class="masterToolTip"
+                                                   id="password" title="Password"><br>
+    <input type="radio"> I agree to all terms, conditions and potentially
+    fatal consequences of becoming a Vermillion test subject.<br>
+    <!-- <button class="btn" id="register"><a href="dashboard.html">Submit</a></button> -->
+    <input class="btn" id="register" type="button" value="Sign Up">
+    <!-- jquery -->
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <script src="js/jquery-1.11.1.js"></script> <!-- plugins -->
+    <!-- main -->
+    <script src="js/main.js" type="text/javascript"></script>
+</form>
 </body>
 </html>
