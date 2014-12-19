@@ -1,4 +1,11 @@
-/* Main */
+/* Wrapper */
+#wrapper{
+    margin-left: 30%;
+    width: 40%;
+}
+
+
+/* Styles */
 body{
     margin: 0;
     padding: 0;
@@ -7,6 +14,27 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center right;
+    font-family: 'Lora', serif;
+}
+
+a{
+    color: #D12633;
+}
+
+/* Main */
+main{
+    margin-top: 10%;
+    background-color: #636363;
+    padding: 15px;
+    box-shadow: 5px 5px #969696;
+}
+
+h2{
+    margin-left: 70px;
+}
+
+#signup{
+margin-left: 225px;
 }
 
 
@@ -50,9 +78,7 @@ body{
     margin-right: -4px;
 }
 
-#signout{
 
-}
 
     /* Buttons */
 .btn {
@@ -70,6 +96,7 @@ body{
     font-size: 20px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
+
 }
 
 .btn:hover {
@@ -80,6 +107,10 @@ body{
     background-image: -o-linear-gradient(top, #E5E5E5, #282828);
     background-image: linear-gradient(to bottom, #E5E5E5, #282828);
     text-decoration: none;
+}
+
+#signinButton{
+    margin-top: 10px;
 }
 
 /* Welcome Area */

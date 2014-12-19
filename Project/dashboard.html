@@ -5,6 +5,7 @@
     <title>Vermillion Enterprises</title>
 </head>
 <link rel="stylesheet" href="css/dashboard-styles.css">
+<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 <body>
 <header>
     <div class="nav">
@@ -12,18 +13,17 @@
             <li class="home"><a href="index.html">Home</a></li>
             <li class="tutorials"><a class="active" href="dashboard.html">Dashboard</a></li>
             <li class="about"><a href="projects.html">Projects</a></li>
-            <li><button name="logout" id="logout" class="btn">Sign Out</button></li>
         </ul>
-
+        <div class="userid">Welcome User</div>
+        <button name="logout" id="logout" class="btn">Sign Out</button>
     </div>
 </header>
-
-    <div class="userid">Welcome User</div>
+<main>
     <div>
         <ul id="tabs-nav">
-            <li class="btn"><a href="#projects">Projects</a></li>
-            <li class="btn"><a href="#tasks">Science!</a></li>
-            <li class="btn"><a href="#users">Users</a></li>
+            <li class="btn btn_left"><a href="#projects">Projects</a></li>
+            <li class="btn btn_left"><a href="#tasks">Science!</a></li>
+            <li class="btn btn_left"><a href="#users">Users</a></li>
         </ul>
 
         <div id="tabs">
@@ -32,6 +32,7 @@
             <p id="users">Manage your profile's information.<br><button class="usersbtn btn">Account Info</button></p>
         </div>
     </div>
+</main>
 
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

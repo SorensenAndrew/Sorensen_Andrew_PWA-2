@@ -7,6 +7,7 @@
     <link href="js/plugins/jquery-ui-1.11.2.custom/jquery-ui.min.css">
     <link href="js/plugins/jquery-ui-1.11.2.custom/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
     <link href="js/plugins/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <header>
@@ -15,13 +16,16 @@
             <li class="home"><a href="index.html">Home</a></li>
             <li class="tutorials"><a href="dashboard.html">Dashboard</a></li>
             <li class="about"><a class="active" href="projects.html">Projects</a></li>
-            <li><button name="logout" id="logout" class="btn">Sign Out</button></li>
+            <li></li>
         </ul>
     </div>
+    <div class="userid">Welcome User</div>
+    <button name="logout" id="logout" class="btn">Sign Out</button>
 </header>
-<div class="userid">Welcome User</div>
 <p><a href="#" class="modalClick">Add +</a></p>
+<main>
 <div class="projects" id="sortable"></div>
+</main>
 <div id="overlay">
     <div id="modal">
         <span class="close">X</span>
@@ -37,19 +41,19 @@
                 <label for="status">Select status:</label>
                 <br>
                 <label class="mystatus">
-                    <input type="radio" name="status" id="urgent"><img src="http://placehold.it/69x75">
+                    <input type="radio" name="status" id="urgent"><img src="images/urgent.jpg">
                 </label>
 
                 <label class="mystatus">
-                    <input type="radio" name="status" id="normal"> <img src="http://placehold.it/69x75">
+                    <input type="radio" name="status" id="normal"> <img src="images/normal.png">
                 </label>
 
                 <label class="mystatus">
-                    <input type="radio" name="status" id="delayed"><img src="http://placehold.it/69x75">
+                    <input type="radio" name="status" id="delayed"><img src="images/delayed.png">
                 </label>
 
                 <label class="mystatus">
-                    <input type="radio" name="status" id="complete"><img src="http://placehold.it/69x75">
+                    <input type="radio" name="status" id="complete"><img src="images/complete.png">
                 </label>
 
                 <br>
@@ -62,6 +66,7 @@
 
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/jquery-1.11.1.js"></script>
     <!-- plugins -->

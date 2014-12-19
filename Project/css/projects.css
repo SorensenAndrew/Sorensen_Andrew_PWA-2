@@ -1,5 +1,14 @@
+body{
+    font-family: 'Lora', serif;
+}
 
-/* Nav */
+main{
+    background-color: #636363;
+    margin-left: 20%;
+    margin-top: 5%;
+    width: 50%;
+}
+    /* Nav */
 
 .nav ul {
     list-style: none;
@@ -39,8 +48,15 @@
     margin-right: -4px;
 }
 
-#signout{
+#logout{
+    margin-left: 92%;
+    clear: left;
+}
 
+.userid{
+    width: 25%;
+    float: left;
+    position: absolute;
 }
 
 
